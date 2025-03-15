@@ -2,7 +2,7 @@
 
 O **SCRUM** é um framework ágil para o desenvolvimento de software que utiliza **iterações curtas e colaborativas** para entregar valor contínuo. Ele foca na **entrega incremental** e no **feedback contínuo** dos stakeholders, com forte ênfase na adaptação e melhoria constante.
 
-![Texto alternativo](https://www.researchgate.net/profile/Vinicius-Santos-32/publication/269268773/figure/fig1/AS:392038978736181@1470480784963/Figura-1-Fluxo-do-processo-Scrum-3.png)
+![Texto alternativo](https://www.shutterstock.com/image-vector/scrum-process-diagram-educational-labeled-600nw-1892676610.jpg)
 
 ## 🏗️ Princípios do SCRUM
 O SCRUM é guiado por **três pilares** fundamentais:

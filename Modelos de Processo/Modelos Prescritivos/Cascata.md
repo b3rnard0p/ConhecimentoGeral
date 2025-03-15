@@ -60,8 +60,4 @@ O **Modelo de Processo Cascata** é um dos modelos mais tradicionais de desenvol
 | Entregas Parciais  | Não         | Sim    |
 | Testes Contínuos   | Não         | Sim    |
 
-## 🔥 Conclusão
-O **Modelo Cascata** é uma abordagem tradicional que **prioriza planejamento e documentação**, sendo ideal para projetos que exigem previsibilidade e controle rigoroso. No entanto, se houver necessidade de maior flexibilidade, metodologias **ágeis** podem ser mais adequadas.
 
----
-📌 **Gostou do conteúdo?** Não esqueça de deixar uma ⭐ no repositório! 😊

@@ -2,7 +2,7 @@
 
 O **Modelo de Processo Cascata** é um dos modelos mais tradicionais de desenvolvimento de software. Ele segue uma abordagem **sequencial e linear**, onde cada fase deve ser concluída antes da próxima começar. Esse modelo é ideal para projetos com requisitos bem definidos e pouca margem para mudanças.
 
-![Texto alternativo]([caminho/para/imagem.png](https://static.vecteezy.com/system/resources/previews/007/403/737/large_2x/the-waterfall-model-infographic-is-used-in-software-engineering-or-software-development-processes-the-illustration-has-6-steps-like-agile-methodology-or-design-thinking-for-application-system-vector.jpg))
+![Texto alternativo](https://static.vecteezy.com/system/resources/previews/007/403/737/large_2x/the-waterfall-model-infographic-is-used-in-software-engineering-or-software-development-processes-the-illustration-has-6-steps-like-agile-methodology-or-design-thinking-for-application-system-vector.jpg)
 
 
 ## 🏗 Fases do Modelo Cascata

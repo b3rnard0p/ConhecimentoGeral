@@ -1,4 +1,76 @@
-# 🚀 O que é o WSL (Windows Subsystem for Linux)?
+# 🐧 Linux
+
+**Linux** é um sistema operacional de código aberto baseado no núcleo (kernel) Linux. Ele é amplamente utilizado em servidores, computadores pessoais, dispositivos embarcados e sistemas de supercomputação. Diferente de sistemas proprietários como Windows e macOS, o Linux é distribuído sob a licença **GPL (General Public License)**, permitindo que qualquer pessoa possa usar, modificar e distribuir o sistema gratuitamente.
+
+O Linux é conhecido por sua **estabilidade**, **segurança** e **eficiência**, sendo o sistema operacional de escolha para a maioria dos servidores web e serviços em nuvem. Existem várias distribuições (ou "distros") de Linux, como **Ubuntu**, **Debian**, **Fedora**, **CentOS**, **Arch Linux**, entre outras, cada uma com características específicas.
+
+## ⚙️ Características do Linux
+
+- **Código aberto e gratuito**.
+- **Sistema multitarefa e multiusuário**.
+- **Alta estabilidade e segurança**.
+- **Altamente personalizável**.
+- **Grande variedade de distribuições** para diferentes finalidades.
+- **Ampla comunidade de suporte e documentação disponível**.
+
+## 💻 Comandos Básicos do Terminal Linux
+
+Aqui estão alguns dos comandos mais comuns para começar a usar o terminal do Linux:
+
+### 📂 Navegação entre diretórios
+
+```
+pwd          # Exibe o diretório atual
+ls           # Lista os arquivos e diretórios do diretório atual
+ls -la       # Lista detalhada incluindo arquivos ocultos
+cd /caminho  # Muda para o diretório especificado
+cd ..        # Volta um diretório
+cd ~         # Vai para o diretório home do usuário
+```
+
+### 📄 Gerenciamento de arquivos e diretórios
+```
+touch arquivo.txt        # Cria um novo arquivo vazio
+mkdir pasta              # Cria um novo diretório
+cp origem destino        # Copia arquivos ou diretórios
+mv origem destino        # Move ou renomeia arquivos ou diretórios
+rm arquivo.txt           # Remove um arquivo
+rm -r pasta              # Remove um diretório e seu conteúdo
+```
+
+### 🔍 Visualização e manipulação de arquivos
+```
+cat arquivo.txt          # Exibe o conteúdo de um arquivo
+less arquivo.txt         # Exibe o conteúdo com paginação
+head arquivo.txt         # Exibe as 10 primeiras linhas
+tail arquivo.txt         # Exibe as 10 últimas linhas
+nano arquivo.txt         # Edita o arquivo usando o editor nano
+```
+
+### 🔑 Permissões e usuários
+```
+chmod 755 arquivo.sh     # Altera as permissões do arquivo
+chown user:grupo arquivo # Altera o proprietário do arquivo
+whoami                   # Mostra o usuário atual
+sudo comando             # Executa um comando como superusuário
+```
+
+### 🔄 Atualização e instalação de pacotes (Debian/Ubuntu)
+```
+sudo apt update                # Atualiza a lista de pacotes disponíveis
+sudo apt upgrade               # Atualiza os pacotes instalados
+sudo apt install nome_pacote   # Instala um pacote
+sudo apt remove nome_pacote    # Remove um pacote
+```
+### 📊 Informações do sistema
+```
+uname -a               # Mostra informações do kernel
+df -h                  # Mostra o uso de disco
+free -h                # Mostra o uso de memória RAM
+top                    # Exibe processos em execução em tempo real
+```
+
+# 🚀 WSL
 
 O **WSL (Windows Subsystem for Linux)** é uma camada de compatibilidade desenvolvida pela Microsoft que permite aos usuários **executar distribuições Linux** nativas diretamente no Windows, sem a necessidade de uma máquina virtual ou dual boot. O WSL fornece uma experiência de **sistema Linux completo** em ambientes Windows, permitindo que desenvolvedores aproveitem as ferramentas, utilitários e softwares do Linux sem precisar sair do ecossistema Windows.
 

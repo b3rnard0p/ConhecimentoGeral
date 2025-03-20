@@ -149,7 +149,7 @@ kubectl rollout history deployment fakeshop
 kubectl rollout undo deployment fakeshop && watch 'kubectl get po'
 ```
 
-###🚀 Atualização da Aplicação
+### 🚀 Atualização da Aplicação
 
 1️⃣9️⃣ **Build e deploy de nova versão**:
 ```

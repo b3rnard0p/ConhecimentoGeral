@@ -43,91 +43,117 @@ Um recurso do Kubernetes que expõe os Pods para comunicação interna ou extern
 
 > 📌 **Observação**: O Kubernetes não substitui o Docker! Na verdade, ele utiliza o Docker (ou outro runtime de contêiner) para executar os contêineres, mas é o Kubernetes que orquestra esses contêineres em larga escala.
 
-##  Comandos básicos para utilizar K8s via wsl
+## 💻 Comandos Básicos Kubernetes via Terminal (WSL)
 
-1️⃣ **Iniciar o wsl**
+Aqui estão alguns comandos essenciais para iniciar, gerenciar e interagir com clusters Kubernetes utilizando o **WSL (Windows Subsystem for Linux)** com **Ubuntu**.
+
+### ⚙️ Preparação e Instalação
+
+1️⃣ **Iniciar o WSL**:
 ```
 wsl -d ubuntu
 ```
-docker
-
+2️⃣ **Instalar o kubectl**:
+```
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-  kubectl
-  
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
-
-kubectl
-
+kubectl version --client
+```
+3️⃣ **Instalar o k3d (ferramenta para rodar clusters k3s no Docker)**:
+```
 wget -q -O - https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash
+k3d version
+```
 
-k3d
+### 🚀 Criação e Gerenciamento de Cluster
 
+4️⃣ **Criar cluster padrão**:
+```
 sudo k3d cluster create
-
-sudo docker system prune -a --volumes -f
-
+```
+5️⃣ **Excluir cluster padrão**:
+```
 sudo k3d cluster delete k3s-default
-
-sudo k3d cluster create
-
-sudo kubectl get nodes
-
+```
+6️⃣ **Criar cluster com múltiplos nós**:
+```
 sudo k3d cluster create --servers 3 --agents 3
-
-sudo docker build -t b3rnar0p/fake-shop-desafio:v1 .
-
-sudo docker push b3rnar0p/fake-shop-desafio:v1
-
-sudo kubectl api-resources
-
-sudo kubectl delete deployment postgre
-
-sudo kubectl apply -f k8s/deployment.yaml
-
-sudo kubectl get pod
-
-sudo kubectl port-forward pod/postgre-68cbd495c7-dr7rt 5432:5432
-
-sudo kubectl port-forward pod/fakeshop-7c896db5d6-4qx5b 5000:500
-
-sudo kubectl logs fakeshop-7c896db5d6-4qx5b
-
-sudo kubectl delete -f k8s/deployment.yaml
-
-sudo kubectl get svc
-
-sudo kubectl port-forward service/fakeshop 5000:5000
-
-sudo k3d cluster delete
-
+```
+7️⃣ **Criar cluster com LoadBalancer na porta 5000**:
+```
 sudo k3d cluster create --servers 3 --agents 3 -p "5000:30000@loadbalancer"
-
-sudo kubectl get service
-
-sudo kubectl get deployment
-
-sudo kubectl get replicaset
-
-sudo kubectl get all
-
-sudo kubectl delete pod/fakeshop-5b6b866cf-4ldd4
-
-sudo kubectl get pod -o wide
-
-code ~/.kube/config
-
-kubectl get nodes --context do-nyc1-aula-k8s
-
+```
+8️⃣ **Parar cluster**:
+```
 sudo k3d cluster stop k3s-default
+```
 
-sudo docker build -t b3rnar0p/fake-shop-desafio:v2 .
+### 🐳 Docker (build & push)
 
-sudo docker push b3rnar0p/fake-shop-desafio:v2
+9️⃣ **Limpeza geral do Docker**:
+```
+sudo docker system prune -a --volumes -f
+```
+🔟 **Build e push da aplicação**:
+```
+sudo docker build -t b3rnar0p/fake-shop-desafio:v1 .
+sudo docker push b3rnar0p/fake-shop-desafio:v1
+```
 
-kubectl apply -f k8s/deployment.yaml && watch 'kubectl get po'
+### 📦 Kubernetes Comandos Essenciais
 
-kubectl get replicaset
+1️⃣1️⃣ **Listar recursos disponíveis no cluster**:
+```
+sudo kubectl api-resources
+```
+1️⃣2️⃣ **Gerenciamento de deploys**:
+```
+sudo kubectl apply -f k8s/deployment.yaml
+sudo kubectl delete -f k8s/deployment.yaml
+sudo kubectl delete deployment postgre
+```
+1️⃣3️⃣ **Verificar pods e serviços**:
+```
+sudo kubectl get pod
+sudo kubectl get svc
+sudo kubectl get all
+```
+1️⃣4️⃣ **Port-forward (expor serviços localmente)**:
+```
+sudo kubectl port-forward pod/postgre-68cbd495c7-dr7rt 5432:5432
+sudo kubectl port-forward pod/fakeshop-7c896db5d6-4qx5b 5000:5000
+sudo kubectl port-forward service/fakeshop 5000:5000
+```
+1️⃣5️⃣ **Ver logs de um pod**:
+```
+sudo kubectl logs fakeshop-7c896db5d6-4qx5b
+```
+1️⃣6️⃣ **Outros comandos úteis**:
+```
+sudo kubectl get deployment
+sudo kubectl get replicaset
+sudo kubectl get pod -o wide
+sudo kubectl delete pod/fakeshop-5b6b866cf-4ldd4
+sudo kubectl get nodes
+sudo kubectl get nodes --context do-nyc1-aula-k8s
+code ~/.kube/config
+```
+### 🔄 Rollback e Histórico de Deployments
 
+1️⃣7️⃣ **Histórico de rollout**:
+```
 kubectl rollout history deployment fakeshop
-
+```
+1️⃣8️⃣ **Rollback de deployment**:
+```
 kubectl rollout undo deployment fakeshop && watch 'kubectl get po'
+```
+
+###🚀 Atualização da Aplicação
+
+1️⃣9️⃣ **Build e deploy de nova versão**:
+```
+sudo docker build -t b3rnar0p/fake-shop-desafio:v2 .
+sudo docker push b3rnar0p/fake-shop-desafio:v2
+kubectl apply -f k8s/deployment.yaml && watch 'kubectl get po'
+```

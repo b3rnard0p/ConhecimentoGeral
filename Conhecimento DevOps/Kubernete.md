@@ -157,3 +157,89 @@ sudo docker build -t b3rnar0p/fake-shop-desafio:v2 .
 sudo docker push b3rnar0p/fake-shop-desafio:v2
 kubectl apply -f k8s/deployment.yaml && watch 'kubectl get po'
 ```
+### Arquivo deployment
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgre
+spec:
+  selector: 
+    matchLabels:
+      app: postgre
+  template:
+    metadata:
+      labels:
+        app: postgre
+    spec:
+      containers:
+        - name: postgre
+          image: postgres:13.16
+          ports:
+            - containerPort: 5432
+          env:
+            - name: POSTGRES_PASSWORD
+              value: senha
+            - name: POSTGRES_USER
+              value: ecommerce
+            - name: POSTGRES_DB
+              value: ecommerce
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgre
+spec:
+  type: ClusterIP
+  ports:
+    - port: 5432
+  selector:
+    app: postgre
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fakeshop
+spec:
+  replicas: 10
+  selector: 
+    matchLabels:
+      app: fakeshop
+  template:
+    metadata:
+      labels:
+        app: fakeshop
+    spec:
+      containers:
+        - name: fakeshop
+          image: b3rnar0p/fake-shop-desafio:v2
+          ports:
+            - containerPort: 5000
+          env:
+            - name: DB_HOST
+              value: postgre
+            - name: DB_USER
+              value: ecommerce
+            - name: DB_PASSWORD
+              value: senha
+            - name: DB_NAME
+              value: ecommerce
+            - name: FLASK_APP
+              value: index.py
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: fakeshop
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 5000
+      nodePort: 30000
+  selector:
+    app: fakeshop
+```

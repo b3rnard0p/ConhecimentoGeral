@@ -44,7 +44,7 @@ A computação em nuvem é baseada em **virtualização**, que permite que os re
 
 ---
 
-# 🚀 O que é a AWS?
+# 🚀 AWS
 
 **AWS (Amazon Web Services)** é uma plataforma de **computação em nuvem** fornecida pela **Amazon**, que oferece uma variedade de serviços de **infraestrutura e software** para empresas, desenvolvedores e governos. A AWS possibilita que você execute aplicações, armazene dados, execute análises, utilize inteligência artificial, desenvolva e implante sites e muito mais, tudo sem precisar gerenciar fisicamente servidores ou outros recursos de infraestrutura.
 
@@ -87,3 +87,57 @@ A AWS oferece serviços de computação em nuvem por meio de **modelos de pagame
 - **Inovação Contínua**: A AWS oferece novos serviços e melhorias constantemente, permitindo que você aproveite o que há de mais moderno em tecnologia.
 
 - **Suporte e Comunidade**: A AWS tem uma enorme base de usuários e uma comunidade ativa. Além disso, oferece suporte técnico dedicado para ajudá-lo a resolver problemas e otimizar sua infraestrutura.
+
+# ☁️ DigitalOcean
+
+**DigitalOcean** é uma plataforma de **computação em nuvem** focada em simplificar a infraestrutura para desenvolvedores e pequenas/médias empresas. Ela oferece soluções fáceis de usar para hospedagem de aplicações, armazenamento de dados, bancos de dados gerenciados e muito mais, com uma interface intuitiva e preços acessíveis.
+
+A DigitalOcean é conhecida por sua simplicidade e rapidez na criação e gerenciamento de servidores virtuais, conhecidos como **Droplets**.
+
+## 🏗️ Como Funciona a DigitalOcean?
+
+A DigitalOcean funciona através da oferta de **recursos em nuvem sob demanda**, permitindo que você crie servidores, bancos de dados e outros serviços rapidamente. Ela é dividida em **datacenters globais**, garantindo baixa latência e alta disponibilidade para as aplicações.
+
+### **Principais Componentes da DigitalOcean**:
+
+1️⃣ **Droplets**: Máquinas virtuais (VMs) simples e rápidas de provisionar. Podem ser utilizadas para hospedar aplicações, websites, servidores de jogos, APIs e muito mais. Os Droplets podem ser escalados de acordo com as necessidades do projeto.
+
+2️⃣ **Spaces**: Serviço de armazenamento de objetos semelhante ao S3 da AWS. Ideal para armazenar arquivos estáticos, como imagens, vídeos, backups e outros dados.
+
+3️⃣ **Databases Gerenciados**: DigitalOcean oferece bancos de dados totalmente gerenciados como PostgreSQL, MySQL, Redis e MongoDB, com backups automáticos, alta disponibilidade e atualizações sem interrupção.
+
+4️⃣ **App Platform**: Plataforma como Serviço (PaaS) que permite o deploy automático de aplicações a partir de repositórios GitHub, GitLab ou Bitbucket. Suporta Node.js, Python, Ruby, PHP, Go e outros.
+
+5️⃣ **VPC (Virtual Private Cloud)**: Rede privada para isolar recursos dentro do ambiente da DigitalOcean, aumentando a segurança e o controle sobre o tráfego interno entre Droplets e serviços.
+
+6️⃣ **Load Balancers**: Serviço gerenciado para distribuir automaticamente o tráfego entre múltiplos Droplets, garantindo alta disponibilidade e melhor desempenho.
+
+7️⃣ **Kubernetes (DOKS)**: Serviço de Kubernetes gerenciado (DigitalOcean Kubernetes Service) que facilita a criação e gerenciamento de clusters Kubernetes com alta disponibilidade.
+
+8️⃣ **Firewalls**: Regras de firewall que podem ser aplicadas aos Droplets ou VPCs para proteger contra acessos não autorizados.
+
+## 🔄 Como a DigitalOcean Facilita o Desenvolvimento?
+
+- **Simplicidade**: A plataforma foi projetada para ser amigável a desenvolvedores, com uma interface limpa e uma linha de comando (doctl) eficiente.
+
+- **Desempenho**: Droplets utilizam discos SSD e datacenters otimizados para garantir alta performance das aplicações.
+
+- **Deploy Rápido**: Você pode criar e configurar servidores em minutos, com imagens prontas para stacks populares (LAMP, Docker, WordPress, etc).
+
+- **Escalabilidade Facilitada**: Com a DigitalOcean, é fácil redimensionar servidores, adicionar mais Droplets ou implementar Kubernetes gerenciado.
+
+## 🌍 Benefícios da DigitalOcean:
+
+- **Custo Acessível**: Planos simples e transparentes, ideais para startups e pequenos projetos que precisam de infraestrutura robusta com baixo custo inicial.
+  
+- **Alta Disponibilidade**: Datacenters distribuídos globalmente, garantindo aplicações disponíveis e com baixa latência.
+
+- **Documentação Clara**: A DigitalOcean é famosa por sua documentação completa e tutoriais fáceis de seguir.
+
+- **Comunidade Ativa**: Fórum e comunidade com uma vasta base de tutoriais e dicas, que ajudam a solucionar problemas e otimizar soluções.
+
+- **Integração com CI/CD**: Integração com pipelines de entrega contínua via App Platform ou com ferramentas de terceiros.
+
+---
+
+💡 **Ideal para desenvolvedores que buscam praticidade e agilidade na criação de ambientes em nuvem sem complexidade.**

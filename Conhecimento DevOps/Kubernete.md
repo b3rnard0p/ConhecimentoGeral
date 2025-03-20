@@ -43,9 +43,12 @@ Um recurso do Kubernetes que expõe os Pods para comunicação interna ou extern
 
 > 📌 **Observação**: O Kubernetes não substitui o Docker! Na verdade, ele utiliza o Docker (ou outro runtime de contêiner) para executar os contêineres, mas é o Kubernetes que orquestra esses contêineres em larga escala.
 
+##  Comandos básicos para utilizar K8s via wsl
 
+1️⃣ **Iniciar o wsl**
+```
 wsl -d ubuntu
-
+```
 docker
 
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"

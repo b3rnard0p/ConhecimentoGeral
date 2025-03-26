@@ -4,6 +4,8 @@
 
 **Desenvolvimento Full Stack** refere-se ao processo de criação tanto do front-end quanto do back-end de aplicações. Isso significa que um desenvolvedor full stack possui habilidades para trabalhar em todas as camadas de uma aplicação, desde a interface do usuário até a lógica do servidor e o gerenciamento de bancos de dados. :contentReference[oaicite:0]{index=0}
 
+![texto alternativo](https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fqpq4mfq50mzxzmnwecco.jpeg)
+
 ## Objetivos do Desenvolvimento Full Stack
 
 O principal objetivo do desenvolvimento full stack é permitir que profissionais ou equipes gerenciem todos os aspectos do desenvolvimento de uma aplicação web, promovendo:

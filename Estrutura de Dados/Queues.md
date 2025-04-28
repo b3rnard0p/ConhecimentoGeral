@@ -29,9 +29,7 @@ Atendimento de Processos: Filas são utilizadas em sistemas operacionais para o 
 Problema: Implementar uma fila para armazenar e processar números.
 
 💻 Código em C++
-cpp
-Copiar
-Editar
+```
 #include <iostream>
 #include <queue>
 using namespace std;
@@ -52,6 +50,8 @@ int main() {
 
     return 0;
 }
+```
+
 🎯 Resumo Final
 Filas são úteis em problemas de gerenciamento de tarefas ou processos em ordem de chegada.
 

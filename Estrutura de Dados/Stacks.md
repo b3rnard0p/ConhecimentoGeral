@@ -1,27 +1,26 @@
-
-# 📚 Pilhas
+# 📚 Pilha (Stack)
 
 ## 📖 Definição
-Uma **pilha** é uma estrutura de dados do tipo **LIFO** (Last In, First Out), onde o último elemento inserido é o primeiro a ser removido. Pode ser imaginada como uma pilha de pratos: o último prato colocado é o primeiro a ser retirado.
+Uma **pilha** é uma estrutura de dados que segue o princípio de **LIFO** (Last In, First Out), ou seja, o último elemento a ser inserido é o primeiro a ser removido.
 
 **Características:**
-- **Inserção** e **remoção** de elementos ocorrem apenas no topo da pilha.
-- **Operações principais**: `push` (inserir), `pop` (remover), `top` (visualizar o topo da pilha).
-- **Tamanho dinâmico**: A pilha cresce ou diminui conforme a inserção ou remoção de elementos.
+- Elementos são inseridos e removidos no topo da pilha.
+- Operações de inserção (push) e remoção (pop) são feitas no topo, o que garante a ordem LIFO.
+- Tamanho pode ser variável, dependendo da implementação.
 
 **Vantagens:**
-- Simples de implementar e entender.
-- Muito eficiente para aplicações onde a ordem de execução é reversa.
+- Permite acesso rápido ao último elemento inserido.
+- Ideal para problemas que exigem retrocesso ou devolução de estados anteriores (como em desfazer/retomar ações).
 
 **Desvantagens:**
-- Não permite acesso a elementos no meio da pilha.
-- Limitada ao acesso do topo, o que pode ser restritivo em alguns casos.
+- Acesso aos elementos não é possível de maneira aleatória, somente ao topo da pilha.
+- Não permite inserção ou remoção em posições específicas.
 
 ## 🌎 Aplicação no Mundo Real
-**Recursão**: Pilhas são usadas em implementações de chamadas recursivas, mantendo o estado de cada chamada até que todas as funções sejam concluídas.
+**Desfazer/Refazer em Editores de Texto**: A pilha é usada para manter um histórico de ações do usuário, permitindo desfazer ou refazer as ações na ordem inversa.
 
 ## 🛠 Exemplo Prático
-**Problema:** Implementar uma pilha para armazenar e imprimir números.
+**Problema:** Implementar uma pilha para controlar as páginas visitadas em um navegador de internet, permitindo voltar para a última página acessada.
 
 ## 💻 Código em C++
 ```cpp
@@ -30,23 +29,31 @@ Uma **pilha** é uma estrutura de dados do tipo **LIFO** (Last In, First Out), o
 using namespace std;
 
 int main() {
-    stack<int> pilha;
+    stack<string> pilha;
+    string url;
+    int num_paginas;
 
-    // Inserindo elementos na pilha
-    pilha.push(10);
-    pilha.push(20);
-    pilha.push(30);
+    cout << "Quantas páginas foram visitadas? ";
+    cin >> num_paginas;
 
-    cout << "Elementos da pilha (do topo para o fundo):" << endl;
+    // Adiciona as URLs na pilha
+    for (int i = 0; i < num_paginas; i++) {
+        cout << "Digite o URL da página " << i + 1 << ": ";
+        cin >> url;
+        pilha.push(url);
+    }
+
+    // Navegar para trás (voltar para a última página visitada)
+    cout << "\nVoltando para as páginas visitadas...\n";
     while (!pilha.empty()) {
-        cout << pilha.top() << " ";
-        pilha.pop();  // Removendo o topo
+        cout << "Voltando para: " << pilha.top() << endl;
+        pilha.pop();  // Remove a página da pilha
     }
 
     return 0;
 }
 ```
 
-## 🎯 Resumo Final
-- Pilhas são úteis em problemas que envolvem a ordem de execução reversa.
-- Usadas em algoritmos de navegação, recursão e desfazer/refazer operações.
+# 🎯 Resumo Final
+- Pilhas são ideais para lidar com tarefas de retrocesso ou devolução de estados.
+- Usadas em controle de histórico de navegação, execução de funções recursivas e algoritmos que necessitam de ordem inversa.
